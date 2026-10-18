@@ -1,0 +1,18 @@
+# Satır sonu karakterlerini otomatik ayarla
+* text=auto
+
+# 1. HTML ve Stil dosyalarını dil istatistiklerinden tamamen gizle
+src/**/*.html linguist-vendored=true
+src/**/*.scss linguist-vendored=true
+src/**/*.css linguist-vendored=true
+
+# 2. Test ve konfigürasyon dosyalarını hesaplamadan çıkar
+src/**/*.spec.ts linguist-documentation
+src/test.ts linguist-documentation
+angular.json linguist-vendor=true
+tsconfig*.json linguist-vendor=true
+package*.json linguist-vendor=true
+
+# 3. Yanlışlıkla Git'e yüklenmiş derleme çıktılarını yoksay
+dist/** linguist-vendored=true
+.angular/** linguist-vendored=true
