@@ -14,7 +14,7 @@ export const routes: Routes = [
   {
     path: 'users',
     title: 'Kullanıcılar',
-    canActivate: [authGuard], // UX önlemi; gerçek yetki kontrolü API'de ([Authorize])
+    canActivate: [authGuard], // UX önlemi; API->([Authorize])
     loadChildren: () => import('./features/users/users.routes').then((m) => m.USERS_ROUTES)
   },
   //{ path: 'users/:id', component: UserDetail, canActivate: [authGuard], pathMatch: "full" }, 

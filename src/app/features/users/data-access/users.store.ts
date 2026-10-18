@@ -19,9 +19,8 @@ import { BildirimServisi } from '../../../core/notification/bildirim.servisi';
 import { Kullanici, KullaniciEkleIstegi } from './kullanici.model';
 import { UsersApi } from './users.api';
 
-/**
- * Signal tabanlı store: iç durum private, dışarıya salt okunur açılır (kapsülleme).
- * Arama: debounce + distinct + switchMap -> eski istek iptal edilir (yarış durumu yok).
+/** Signal tabanlı store: iç durum private, dışarıya salt okunur.
+ * Arama: debounce + distinct + switchMap -> eski istek iptal et (yarış durumu yok).
  */
 @Injectable({ providedIn: 'root' })
 export class UsersStore {
@@ -61,7 +60,7 @@ export class UsersStore {
         }),
         switchMap((metin) =>
           this.api.getAll(metin).pipe(
-            // catchError İÇTE: hata gelse de ana akış yaşamaya devam eder.
+            // catchError İÇTE: hata gelse de ana akış yaşamaya devam etsin.
             catchError(() => {
               this._hata.set('Kullanıcılar yüklenemedi.');
               return of(null);
@@ -76,12 +75,12 @@ export class UsersStore {
       });
   }
 
-  /** Arama kutusundan çağrılır (debounce store içinde). */
+  /** Arama kutusundan çağır (debounce store). */
   ara(metin: string): void {
     this.arama$.next(metin);
   }
 
-  /** Mevcut aramayla listeyi yeniden çeker. */
+  /** Mevcut aramayla listeyi yeniden ççek. */
   yenile(): void {
     this.yenile$.next();
   }

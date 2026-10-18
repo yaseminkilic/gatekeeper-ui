@@ -8,9 +8,8 @@ export interface JwtPayload {
 
 const ROL_URI = 'http://schemas.microsoft.com/ws/2008/06/identity/claims/role';
 
-/**
- * JWT payload'ını okur. UYARI: imza DOĞRULANMAZ. Sonuç yalnızca arayüzü
- * şekillendirmek (rol bazlı buton gösterme gibi) için kullanılır, güvenlik kararı için asla.
+/** JWT payload'ını okur. 
+ * UYARI: imza DOĞRULANMAZ. Sonuç yalnızca arayüzü şekillendirmek (rol bazlı buton gösterme vb), güvenlik YOK.
  */
 export function jwtCoz(token: string): JwtPayload | null {
   try {

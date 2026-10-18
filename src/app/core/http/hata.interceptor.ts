@@ -5,9 +5,8 @@ import { catchError, throwError } from 'rxjs';
 import { BildirimServisi } from '../notification/bildirim.servisi';
 import { problemOku } from './problem-details';
 
-/**
- * Ortak hataları tek yerde kullanıcı diline çevirir.
- * 401'e dokunmaz (refresh interceptor'ın işi); 400/404/409 çağıran tarafta ele alınır.
+/**  Global Exception Handler
+ * 401'e dokunma (refresh interceptor); 400/404/409 çağıran tarafta ele al
  */
 export const hataInterceptor: HttpInterceptorFn = (req, next) => {
   const bildirim = inject(BildirimServisi);

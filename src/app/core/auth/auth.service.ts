@@ -12,7 +12,7 @@ function depodanOku(): string | null {
   try {
     return sessionStorage.getItem(TOKEN_ANAHTARI);
   } catch {
-    return null; // depolama kapalı olabilir
+    return null; // depolama kapalı ???
   }
 }
 
@@ -20,14 +20,11 @@ function depoyaYaz(token: string | null): void {
   try {
     if (token) sessionStorage.setItem(TOKEN_ANAHTARI, token);
     else sessionStorage.removeItem(TOKEN_ANAHTARI);
-  } catch {
-    /* yok say */
-  }
+  } catch {}
 }
 
-/**
- * Kimlik doğrulama durumu.
- * - Access token: sessionStorage (kısa ömürlü). XSS'e açıktır; bu bilinçli bir ödünleşimdir.
+/** Kimlik doğrulama durumu.
+ * - Access token: sessionStorage (kısa ömürlü). XSS'e açıktır; (bilinçli).
  * - Refresh token: HttpOnly cookie, JS göremez; yalnızca /api/auth uçlarına gider.
  */
 @Injectable({ providedIn: 'root' })
@@ -62,10 +59,9 @@ export class AuthService {
       .pipe(tap((yanit) => this.tokenKaydet(yanit.authToken)));
   }
 
-  /**
-   * Refresh cookie'si ile yeni access token alır.
+  /** Refresh cookie'si ile yeni access token alır.
    * Aynı anda birden çok çağrı gelirse TEK istek atılır ve sonuç paylaşılır;
-   * aksi halde refresh token rotation, ikinci isteği "iptal edilmiş token" sayardı.
+   * aksi halde refresh token rotation, ikinci isteği "iptal edilmiş token" say
    */
   yenile(): Observable<string> {
     if (!this.yenileme$) {

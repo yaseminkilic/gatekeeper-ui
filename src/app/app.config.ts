@@ -14,14 +14,13 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
 
-    // Sıra önemli: istek auth -> refresh -> hata yönünde gider, yanıt hatası ters yönde döner.
+    // istek auth -> refresh -> hata yönünde; yanıt hatası ters yönde
     provideHttpClient(
       withXhr(),
       withInterceptors([authInterceptor, refreshInterceptor, hataInterceptor]),
     ),
 
-    // Bildirimin nasıl gösterileceği yalnızca burada seçilir (Dependency Inversion).
-    // useExisting: servis ve ekrandaki host AYNI örneği paylaşsın diye şart.
+    // DI UseExisting: servis ve host AYNI
     { provide: BildirimServisi, useExisting: ToastBildirim },
   ],
 };

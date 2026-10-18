@@ -5,13 +5,13 @@ import { Observable } from 'rxjs';
 import { API_URL } from '../../../core/config/api-url.token';
 import { Kullanici, KullaniciEkleIstegi } from './kullanici.model';
 
-/** Yalnızca HTTP bilir (Controller karşılığı istemci katmanı). */
+/** Yalnızca HTTP (Controller). */
 @Injectable({ providedIn: 'root' })
 export class UsersApi {
   private readonly http = inject(HttpClient);
   private readonly url = `${inject(API_URL)}/kullanicilar`;
 
-  /** GET /api/kullanicilar?arama= (params, özel karakterleri otomatik encode eder) */
+  /** GET /api/kullanicilar?arama= (params, özel karakterleri otomatik encode) */
   getAll(arama = ''): Observable<Kullanici[]> {
     let params = new HttpParams();
     if (arama.trim()) params = params.set('arama', arama.trim());

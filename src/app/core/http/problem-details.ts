@@ -15,7 +15,6 @@ export function problemOku(hata: HttpErrorResponse): ProblemDetails | null {
   return govde && typeof govde === 'object' ? (govde as ProblemDetails) : null;
 }
 
-/** Kullanıcıya gösterilecek en anlamlı mesajı seçer. */
 export function problemMesaji(hata: HttpErrorResponse, varsayilan: string): string {
   const p = problemOku(hata);
   if (p?.errors) {

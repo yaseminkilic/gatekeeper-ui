@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
 
 import { Kullanici } from '../data-access/kullanici.model';
 
-/** Dumb component: servis bilmez, yalnızca input alır ve olay yayar. */
+/** Dumb component: servis bilmesin, input al ve olay yay. */
 @Component({
   selector: 'app-user-list',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -89,7 +89,7 @@ export class LoginComponent {
   protected readonly yukleniyor = signal(false);
   protected readonly hata = signal('');
 
-  // Backend LoginRequest ([Required] iki alan) ile aynı kurallar.
+  // Backend LoginRequest ([Required]).
   protected readonly form = this.fb.nonNullable.group({
     kullaniciAdi: ['', [Validators.required]],
     sifre: ['', [Validators.required]]

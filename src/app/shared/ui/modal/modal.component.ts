@@ -8,10 +8,10 @@ import {
   viewChild
 } from '@angular/core';
 
-/**
- * Yeniden kullanılabilir modal (dumb): yalnızca input alır, output yayar.
- * İçerik <ng-content />, alt butonlar [modal-alt] özniteliğiyle dışarıdan gelir.
- * Esc ve dış alana tıklama kapatır; açılınca odak içeri alınır, kapanınca eski yerine döner.
+/** modal (dumb): input al, output yay
+ * Context <ng-content />, 
+ * Butonlar [modal-alt]
+ * Esc / out-click = KAPAT
  */
 @Component({
   selector: 'app-modal',

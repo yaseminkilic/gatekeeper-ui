@@ -10,7 +10,7 @@ import { UsersStore } from '../data-access/users.store';
 import { UserFormComponent } from '../ui/user-form.component';
 import { UserListComponent } from '../ui/user-list.component';
 
-/** Smart (container) component: store, onay ve yetki bilgisiyle konuşur; ekranı dumb parçalar çizer. */
+/** Smart component: store, onay ve yetki bilgisiyle konuş; ekranı dumb parçalar çiz. */
 @Component({
   selector: 'app-users-page',
   imports: [ReactiveFormsModule, UserListComponent, UserFormComponent, ModalComponent],
@@ -23,7 +23,7 @@ import { UserListComponent } from '../ui/user-list.component';
           <p class="soluk">{{ store.adet() }} kayıt</p>
         </div>
 
-        <!-- Yalnızca UX: asıl yetki kontrolü API'de (YonetimYetkisi policy) -->
+        <!-- Yalnızca UX, asıl yetki API->(YonetimYetkisi policy) -->
         @if (auth.adminMi()) {
           <button type="button" class="dugme dugme--birincil" (click)="formuAc()">
             Yeni kullanıcı

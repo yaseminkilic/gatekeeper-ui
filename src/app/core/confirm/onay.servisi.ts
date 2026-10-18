@@ -6,7 +6,7 @@ export interface OnayDurumu {
   onayMetni: string;
 }
 
-/** Kod içinde `if (await onay.sor(...))` diyebilmek için Promise<boolean> döner. */
+/** `if (await onay.sor(...))` -> Promise<boolean> */
 @Injectable({ providedIn: 'root' })
 export class OnayServisi {
   private readonly _durum = signal<OnayDurumu | null>(null);
@@ -15,7 +15,7 @@ export class OnayServisi {
   private cozum?: (deger: boolean) => void;
 
   sor(mesaj: string, baslik = 'Onay', onayMetni = 'Onayla'): Promise<boolean> {
-    this.cozum?.(false); // açık bir soru varsa vazgeçildi say
+    this.cozum?.(false); // Açıksa vazgeçildi say
     this._durum.set({ baslik, mesaj, onayMetni });
     return new Promise<boolean>((resolve) => (this.cozum = resolve));
   }

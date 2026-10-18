@@ -7,5 +7,5 @@ export interface LoginRequest {
 /** Backend: record LoginResponse(string AuthToken, int ExpiresIn) -> camelCase JSON */
 export interface LoginResponse {
   authToken: string;
-  expiresIn: number; // saniye
+  expiresIn: number; 
 }

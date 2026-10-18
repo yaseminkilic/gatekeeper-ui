@@ -5,9 +5,7 @@ import { KullaniciEkleIstegi } from '../data-access/kullanici.model';
 
 type AlanAdi = 'ad' | 'kullaniciAdi' | 'sifre';
 
-/**
- * Dumb form. Kurallar backend KullaniciEkleIstegi ile aynı (kullanıcı deneyimi içindir;
- * asıl doğrulama ve güvenlik sunucuda).
+/** Dumb form. backend KullaniciEkleIstegi (kullanıcı deneyimi için).
  */
 @Component({
   selector: 'app-user-form',

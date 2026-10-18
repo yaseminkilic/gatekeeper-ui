@@ -13,13 +13,5 @@ import { Footer } from './core/layout/footer/footer';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  // protected readonly auth = inject(AuthService);
-  // private readonly router = inject(Router);
 
-  // protected readonly rolMetni = computed(() => (this.auth.adminMi() ? 'Yönetici' : 'Kullanıcı'));
-
-  // protected async cikis(): Promise<void> {
-  //   await firstValueFrom(this.auth.cikis());
-  //   await this.router.navigate(['/login']);
-  // }
 }

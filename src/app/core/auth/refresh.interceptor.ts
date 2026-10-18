@@ -7,8 +7,7 @@ import { API_URL } from '../config/api-url.token';
 import { authUcuMu } from './auth-ucu';
 import { AuthService } from './auth.service';
 
-/**
- * API 401 dönerse refresh cookie ile oturumu yeniler ve isteği yeni token ile tekrarlar.
+/** API 401 dönerse refresh cookie ile oturumu yeniler ve isteği yeni token ile tekrarlar.
  * Eşzamanlı 401'ler AuthService.yenile() içinde tek yenileme isteğinde birleşir.
  */
 export const refreshInterceptor: HttpInterceptorFn = (req, next) => {
@@ -27,7 +26,7 @@ export const refreshInterceptor: HttpInterceptorFn = (req, next) => {
       if (!yenilenebilir) return throwError(() => hata);
 
       return auth.yenile().pipe(
-        // Yalnızca YENİLEME hatası oturumu kapatır; tekrar denenen isteğin hatası değil.
+        // Yalnızca YENİLEME hatası oturumu kapat
         catchError((yenilemeHatasi) => {
           auth.yerelCikis();
           void router.navigate(['/login']);

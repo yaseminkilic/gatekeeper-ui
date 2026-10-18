@@ -5,8 +5,8 @@ import { catchError, map, of } from 'rxjs';
 import { AuthService } from './auth.service';
 
 /**
- * Kullanıcı deneyimi guard'ı, GÜVENLİK DEĞİL: asıl yetki kontrolü API'de ([Authorize]).
- * Access token yoksa/süresi dolduysa refresh cookie ile sessizce oturumu yenilemeyi dener.
+ * Kullanıcı deneyimi GUARD, GÜVENLİK DEĞİL: asıl yetki API'de ([Authorize]).
+ * Access token yoksa/süresi dolduysa refresh cookie ile sessizce oturumu yenilemeyi dene.
  */
 export const authGuard: CanActivateFn = (_route, state) => {
   const auth = inject(AuthService);
