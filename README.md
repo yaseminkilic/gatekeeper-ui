@@ -11,7 +11,8 @@ npm install            # "edgesOut" hatası alırsan: npm install --legacy-peer-
 npm start              # http://localhost:4200
 ```
 
-`proxy.conf.json` -> `target`, API url (şu an `https://localhost:44384`).
+/*  */
+`proxy.conf.json` -> `target`, API url (şu an `https://localhost:44384`, `http://localhost:5000`).
 Dev proxy ile Angular ve API **aynı origin**'(CORS yok, refresh cookie sorunsuz)
 
 Cookie `Secure` olduğu için bazı tarayıcılarda `http://localhost` üzerinde saklanmayabilir; 
