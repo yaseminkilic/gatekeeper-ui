@@ -1,0 +1,37 @@
+/* Sidebar occupies a fixed width and stretches vertically */
+.sidebar-container {
+  width: 260px;
+  background-color: #1f2937; /* Modern dark slate gray */
+  color: #f3f4f6;
+  border-right: 1px solid #374151;
+  padding: 24px 16px;
+  box-sizing: border-box;
+}
+
+/* Remove default list margins, paddings, and bullets */
+.sidebar-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Space between menu items */
+}
+
+/* Full-width links block inside the list item */
+.sidebar-container li a {
+  display: block;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #9ca3af; /* Muted gray text for unselected state */
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover effect */
+.sidebar-container li a:hover {
+  color: #ffffff;
+  background-color: #374151;
+}

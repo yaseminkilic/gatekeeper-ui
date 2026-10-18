@@ -1,0 +1,19 @@
+/* Centers content and creates a crisp bottom boundary */
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  background-color: #f9fafb; /* Light neutral gray */
+  border-top: 1px solid #e5e7eb; /* Subtle top separation border */
+  padding: 0 24px;
+}
+
+/* Clear, legible typography for legal copy */
+.footer-container p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #6b7280; /* Soft, muted gray text */
+  font-weight: 400;
+  text-align: center;
+}

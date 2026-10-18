@@ -1,0 +1,16 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-body {
+  display: flex;
+  flex: 1; /* Pushes footer to the bottom */
+}
+
+.layout-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
