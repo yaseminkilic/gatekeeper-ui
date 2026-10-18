@@ -3,11 +3,9 @@
     <h1>Kullanıcı Yönetimi</h1>
   </div>
   <div class="header-right">
-    @if (auth.oturumVar()) {
-      <div class="ust-serit__kullanici">
-        <span>{{ auth.kullaniciAdi() }} <small class="soluk">({{ rolMetni() }})</small></span>
-        <button type="button" class="dugme dugme--metin" (click)="cikis()">Çıkış yap</button>
-      </div>
-    }
+    <div class="ust-serit__kullanici">
+      <span>{{ auth.kullaniciAdi() }} <small class="soluk">({{ rolMetni() }})</small></span>
+      <button type="button" class="dugme dugme--metin" (click)="cikis()">Çıkış yap</button>
+    </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-/** Backend: record KullaniciDto(int Id, string Ad). Entity (SifreHash vb.) asla dönmez. */
+/** Backend: record KullaniciDto(int Id, string Ad). Entity (SifreHash vb.) asla dönme. */
 export interface Kullanici {
   id: number;
   ad: string;

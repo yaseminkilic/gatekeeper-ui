@@ -4,8 +4,7 @@ import { AuthService } from './../../auth/auth.service';
 import { firstValueFrom } from 'rxjs/internal/firstValueFrom';
 
 @Component({
-  imports: [RouterOutlet],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [],
   selector: 'app-header',
   styleUrl: './header.css',
   templateUrl: './header.html',

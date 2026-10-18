@@ -1,17 +1,25 @@
-<div class="layout-container">
-    <app-header></app-header>
-  
-  <div class="layout-body">
-    <app-sidebar></app-sidebar>
-    
-    <main class="layout-content">
-      <!-- Dynamic route views render right here -->
-      <router-outlet></router-outlet>
-    </main>
-  </div>
-  
-  <app-footer></app-footer>
-</div>
 
+
+<div class="layout-container">
+  @if (auth.oturumVar()) {
+    <app-header></app-header>
+    
+    <div class="layout-body">
+      <app-sidebar></app-sidebar>
+      
+      <main class="layout-content">
+        <!-- Dynamic route views render right here -->
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+    
+    <app-footer></app-footer>
+  }
+  @else {
+    <div style="width: 100%; align-items: center; margin: 10% auto 20%; min-height: fit-content; zoom: 1.5;">
+      <router-outlet></router-outlet>
+    </div>
+  }
+</div>
 <app-toast-host />
 <app-onay-host />
